@@ -24,6 +24,14 @@
     <string name="ticket_desc">Ticket desc.</string>
     <string name="statistics">Statistics</string>
     <string name="new_s">New</string>
+    <string name="enhancement">Enhancement</string>
+    <string name="bug">Bug</string>
+    <string name="lowest">Lowest</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="highest">Highest</string>
     <string name="tickets">Tickets</string>
     <string name="profile">Profile</string>
+    <string name="search">Search...</string>
 </resources>

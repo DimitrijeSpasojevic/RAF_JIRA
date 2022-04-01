@@ -17,7 +17,10 @@
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/fragment_new_ticket.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/layout/fragment_recycler.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/fragment_ticket_list.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/layout/proba.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/ticket_list_item.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.34010416666666665" />
       </map>

@@ -16,4 +16,42 @@ public class Ticket {
         Highest, High, Medium, Low, Lowest
     }
 
+    public Ticket(String title, String description, TicketType ticketType, TicketPriority ticketPriority) {
+        this.title = title;
+        this.description = description;
+        this.ticketType = ticketType;
+        this.ticketPriority = ticketPriority;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public TicketType getTicketType() {
+        return ticketType;
+    }
+
+    public void setTicketType(TicketType ticketType) {
+        this.ticketType = ticketType;
+    }
+
+    public TicketPriority getTicketPriority() {
+        return ticketPriority;
+    }
+
+    public void setTicketPriority(TicketPriority ticketPriority) {
+        this.ticketPriority = ticketPriority;
+    }
 }

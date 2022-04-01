@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/image_view_bug"
+    <ImageButton
+        android:id="@+id/image_btn"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
+        android:src="@drawable/ic_baseline_bug_report_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_baseline_bug_report_24" />
 
     <TextView
         android:id="@+id/text_view_ticket_title"
@@ -20,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="@string/bugs"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/image_view_bug"
+        app:layout_constraintStart_toEndOf="@id/image_btn"
         />
 
     <TextView
@@ -34,7 +37,7 @@
         android:scrollbars="vertical"
         android:text="sdgdgsdgsdgusmod tempet dolore magna aliusmod tempet dolore magna usmod tempet dolore magna usmod tempet dolore magna usmod tempet dolore magna qua. Ut enim ad minim "
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/image_view_bug"
+        app:layout_constraintStart_toEndOf="@id/image_btn"
         app:layout_constraintTop_toBottomOf="@+id/text_view_ticket_title" />
 
 
