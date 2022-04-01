@@ -25,43 +25,48 @@
 
     <TextView
         android:id="@+id/text_view_ticket_description"
+        android:inputType="textMultiLine"
+        android:lines="2"
+        android:maxLines="2"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_margin="20dp"
-        android:text="sdgdgsdgsdgusmod tempet dolore magna aliqua. Ut enim ad minim "
+        android:scrollbars="vertical"
+        android:text="sdgdgsdgsdgusmod tempet dolore magna aliusmod tempet dolore magna usmod tempet dolore magna usmod tempet dolore magna usmod tempet dolore magna qua. Ut enim ad minim "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/image_view_bug"
         app:layout_constraintTop_toBottomOf="@+id/text_view_ticket_title" />
 
-    <ImageButton
-        android:id="@+id/img_remove"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_baseline_remove_circle_24"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
-    <ImageButton
-        android:id="@+id/img_prev"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"
-        />
+        app:layout_constraintStart_toEndOf="@+id/text_view_ticket_description"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/img_remove"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_remove_circle_24"
+            />
 
-    <ImageButton
-        android:id="@+id/img_next"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-        app:layout_constraintBottom_toTopOf="@id/img_remove"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/img_prev"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/img_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
