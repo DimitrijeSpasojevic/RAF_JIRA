@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">rs.raf.projekat1.dimitrije_spasojevic_10820rn</string>
+    <string name="app_title">Jira system for Raf students</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="user_name">Username</string>
+    <string name="login">Login</string>
+    <string name="logout">Log out</string>
+    <string name="raf_jira_statistics">Raf Jira statistics</string>
+    <string name="bugs">Bugs</string>
+    <string name="enhancements">Enhancements</string>
+    <string name="to_do">ToDo</string>
+    <string name="in_progress">In progress</string>
+    <string name="done">Done</string>
+    <string name="edit">Edit</string>
+    <string name="add_new_ticket">Add new ticket</string>
+    <string name="ticket_title">Ticket title</string>
+    <string name="ticket_description">Ticket description</string>
+    <string name="lorem">Lorem ipsum dua. Ut enim ad minim </string>
+    <string name="ticket_type">Ticket type</string>
+    <string name="priority">Priority</string>
+    <string name="estimation">Estimation</string>
+    <string name="logged_time">Logged time</string>
+    <string name="ticket_desc">Ticket desc.</string>
+    <string name="statistics">Statistics</string>
+    <string name="new_s">New</string>
+    <string name="tickets">Tickets</string>
+    <string name="profile">Profile</string>
+</resources>

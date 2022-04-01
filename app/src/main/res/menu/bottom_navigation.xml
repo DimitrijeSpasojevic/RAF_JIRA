@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_1"
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title="First" />
+
+    <item
+        android:id="@+id/navigation_2"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Second" />
+
+    <item
+        android:id="@+id/navigation_3"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:title="Third" />
+
+    <item
+        android:id="@+id/navigation_4"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Third" />
+
+</menu>
