@@ -33,7 +33,7 @@ public class ToDoFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        recyclerViewModel = new ViewModelProvider(this).get(RecyclerViewModel.class);
+        recyclerViewModel = new ViewModelProvider(requireActivity()).get(RecyclerViewModel.class);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ToDoFragment extends Fragment {
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
-        recyclerViewModel.getTickets().observe(requireActivity(),tickets -> {
+        recyclerViewModel.getToDoTickets().observe(requireActivity(),tickets -> {
             adapter.submitList(tickets);
         });
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,10 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.function.Consumer;
 
@@ -66,6 +71,20 @@ public class TicketAdapter extends ListAdapter<Ticket,TicketAdapter.ViewHolder> 
         }
 
         public void bind(Ticket ticket){
+            ImageButton imageButton = itemView.findViewById(R.id.image_btn);
+
+            if(ticket.getTicketType() == Ticket.TicketType.BUG){
+                Glide
+                        .with(context)
+                        .load(R.drawable.ic_baseline_bug_report_24)
+                        .into(imageButton);
+            }else {
+                Glide
+                        .with(context)
+                        .load(R.drawable.ic_baseline_rocket_launch_24)
+                        .into(imageButton);
+            }
+
             ((TextView)itemView.findViewById(R.id.text_view_ticket_title)).setText(ticket.getTitle());
             ((TextView)itemView.findViewById(R.id.text_view_ticket_description)).setText(ticket.getDescription());
         }

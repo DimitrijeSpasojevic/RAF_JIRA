@@ -10,10 +10,9 @@
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:src="@drawable/ic_baseline_bug_report_24"
+        android:background="@drawable/round_corner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_baseline_bug_report_24" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_ticket_title"
