@@ -81,6 +81,5 @@ public class LoginFragment extends Fragment {
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.mainFcv, new MainFragment());
         transaction.commit();
-
     }
 }

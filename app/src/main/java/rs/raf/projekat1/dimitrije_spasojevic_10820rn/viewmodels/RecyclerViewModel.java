@@ -20,12 +20,14 @@ public class RecyclerViewModel extends ViewModel {
 
     public RecyclerViewModel() {
         for (int i = 0; i < 5; i++) {
-            Ticket ticket = new Ticket("Bug" + i,"opis bla bla", Ticket.TicketType.BUG, Ticket.TicketPriority.High);
+            Ticket ticket = new Ticket("Bug" + i,"opis bla bla", Ticket.TicketType.BUG, Ticket.TicketPriority.High,"4");
             ticketList.add(ticket);
         }
 
         List<Ticket> listToSub = new ArrayList<>(ticketList);
         toDoTickets.setValue(listToSub);
+        inProgressTickets.setValue(listToSub);
+        doneTickets.setValue(listToSub);
         tickets.setValue(listToSub);
     }
 

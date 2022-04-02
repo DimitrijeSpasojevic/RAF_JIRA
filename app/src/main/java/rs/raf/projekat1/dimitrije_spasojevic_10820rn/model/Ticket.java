@@ -6,6 +6,7 @@ public class Ticket {
     private String description;
     private TicketType ticketType;
     private TicketPriority ticketPriority;
+    private String estimation;
 
     public enum TicketType {
         ENHANCEMENT,
@@ -16,11 +17,20 @@ public class Ticket {
         Highest, High, Medium, Low, Lowest
     }
 
-    public Ticket(String title, String description, TicketType ticketType, TicketPriority ticketPriority) {
+    public Ticket(String title, String description, TicketType ticketType, TicketPriority ticketPriority, String estimation) {
         this.title = title;
         this.description = description;
         this.ticketType = ticketType;
         this.ticketPriority = ticketPriority;
+        this.estimation = estimation;
+    }
+
+    public String getEstimation() {
+        return estimation;
+    }
+
+    public void setEstimation(String estimation) {
+        this.estimation = estimation;
     }
 
     public String getTitle() {

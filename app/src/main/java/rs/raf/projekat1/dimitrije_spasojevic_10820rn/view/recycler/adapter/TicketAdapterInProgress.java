@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,19 +15,16 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.function.Consumer;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.Ticket;
 
-public class TicketAdapter extends ListAdapter<Ticket,TicketAdapter.ViewHolder> {
+public class TicketAdapterInProgress extends ListAdapter<Ticket, TicketAdapterInProgress.ViewHolder> {
 
     private final Consumer<Ticket> onTicketClicked;
-
-    public TicketAdapter(@NonNull DiffUtil.ItemCallback<Ticket> diffCallback, Consumer<Ticket> onTicketClicked) {
+    public TicketAdapterInProgress(@NonNull DiffUtil.ItemCallback<Ticket> diffCallback, Consumer<Ticket> onTicketClicked) {
         super(diffCallback);
         this.onTicketClicked = onTicketClicked;
     }
@@ -37,7 +33,7 @@ public class TicketAdapter extends ListAdapter<Ticket,TicketAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ticket_list_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ticket_list_item_in_progress,parent,false);
         return new ViewHolder(view, parent.getContext(), position ->{
             Ticket ticket = getItem(position);
             onTicketClicked.accept(ticket);

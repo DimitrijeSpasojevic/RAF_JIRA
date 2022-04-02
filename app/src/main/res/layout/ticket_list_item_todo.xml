@@ -57,13 +57,6 @@
             />
 
         <ImageButton
-            android:id="@+id/img_prev"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
-            android:visibility="gone" />
-
-        <ImageButton
             android:id="@+id/img_next"
             android:layout_width="50dp"
             android:layout_height="50dp"

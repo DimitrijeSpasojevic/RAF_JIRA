@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_bug_report_24.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_baseline_eco_24.xml" value="0.2235" />
         <entry key="app/src/main/res/drawable/ic_baseline_format_list_bulleted_24.xml" value="0.2235" />
+        <entry key="app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/ic_baseline_rocket_launch_24.xml" value="0.2235" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2235" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2791791363830697" />
@@ -19,10 +20,13 @@
         <entry key="app/src/main/res/layout/fragment_new_ticket.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/fragment_recycler.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/layout/fragment_recycler_todo.xml" value="0.19410004275331338" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.4" />
         <entry key="app/src/main/res/layout/fragment_ticket_list.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/proba.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/ticket_list_item.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/layout/ticket_list_item_done.xml" value="0.16311399443929564" />
+        <entry key="app/src/main/res/layout/ticket_list_item_in_progress.xml" value="0.16311399443929564" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.34010416666666665" />
       </map>
     </option>

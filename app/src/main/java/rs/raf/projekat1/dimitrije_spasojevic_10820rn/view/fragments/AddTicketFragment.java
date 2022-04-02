@@ -61,7 +61,7 @@ public class AddTicketFragment extends Fragment implements AdapterView.OnItemSel
     private void createNewTicket(){
         checkSpinners();
         Ticket ticket = new Ticket(ticketTitle.getText().toString(),
-                ticketDescription.getText().toString(),ticketType,ticketPriority);
+                ticketDescription.getText().toString(),ticketType,ticketPriority,ticketEst.getText().toString());
         recyclerViewModel.addTicket(ticket);
         ticketTitle.setText("");
         ticketDescription.setText("");
