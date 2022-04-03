@@ -19,12 +19,14 @@ import com.bumptech.glide.Glide;
 import java.util.function.Consumer;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.ClickConsumer;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.Ticket;
 
 public class TicketAdapterInProgress extends ListAdapter<Ticket, TicketAdapterInProgress.ViewHolder> {
 
-    private final Consumer<Ticket> onTicketClicked;
-    public TicketAdapterInProgress(@NonNull DiffUtil.ItemCallback<Ticket> diffCallback, Consumer<Ticket> onTicketClicked) {
+    private final Consumer<ClickConsumer> onTicketClicked;
+    private ClickConsumer.Click click;
+    public TicketAdapterInProgress(@NonNull DiffUtil.ItemCallback<Ticket> diffCallback, Consumer<ClickConsumer> onTicketClicked) {
         super(diffCallback);
         this.onTicketClicked = onTicketClicked;
     }
@@ -36,7 +38,7 @@ public class TicketAdapterInProgress extends ListAdapter<Ticket, TicketAdapterIn
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ticket_list_item_in_progress,parent,false);
         return new ViewHolder(view, parent.getContext(), position ->{
             Ticket ticket = getItem(position);
-            onTicketClicked.accept(ticket);
+            onTicketClicked.accept(new ClickConsumer(ticket,click));
         });
     }
 
@@ -57,10 +59,18 @@ public class TicketAdapterInProgress extends ListAdapter<Ticket, TicketAdapterIn
             super(itemView);
             this.context = context;
 
-            ImageButton imageButton = itemView.findViewById(R.id.image_btn);
+            ImageButton next = itemView.findViewById(R.id.img_next);
+            ImageButton prev= itemView.findViewById(R.id.img_prev);
 
-            imageButton.setOnClickListener(v -> {
+            next.setOnClickListener(v -> {
                 if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    click= ClickConsumer.Click.ADD_IN_DONE;
+                    onItemClicked.accept(getAdapterPosition());
+                }
+            });
+            prev.setOnClickListener(v -> {
+                if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    click= ClickConsumer.Click.ADD_IN_TODO;
                     onItemClicked.accept(getAdapterPosition());
                 }
             });

@@ -60,8 +60,14 @@ public class AddTicketFragment extends Fragment implements AdapterView.OnItemSel
 
     private void createNewTicket(){
         checkSpinners();
-        Ticket ticket = new Ticket(ticketTitle.getText().toString(),
-                ticketDescription.getText().toString(),ticketType,ticketPriority,ticketEst.getText().toString());
+        String title = ticketTitle.getText().toString();
+        String desc = ticketDescription.getText().toString();
+        String est = ticketEst.getText().toString();
+        if (title.length() == 0 || desc.length() == 0 || est.length() == 0){
+            Toast.makeText(requireContext(), "Each field must be filled", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Ticket ticket = new Ticket(title,desc,ticketType,ticketPriority,est);
         recyclerViewModel.addTicket(ticket);
         ticketTitle.setText("");
         ticketDescription.setText("");

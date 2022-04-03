@@ -1,6 +1,8 @@
 package rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.fragments;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 
@@ -42,6 +44,7 @@ public class DoneFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init(view);
+        recyclerViewModel.filterTicket(recyclerViewModel.getFilterDone(),"done",Boolean.FALSE);
     }
 
     private void init(View view){
@@ -51,12 +54,31 @@ public class DoneFragment extends Fragment {
         });
         editText = view.findViewById(R.id.search);
         recyclerView = view.findViewById(R.id.recyclerView);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
-        recyclerViewModel.getInProgressTickets().observe(requireActivity(),tickets -> {
+        recyclerViewModel.getDoneTickets().observe(requireActivity(),tickets -> {
             adapter.submitList(tickets);
         });
+        initListeners();
+    }
+    private void initListeners(){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                recyclerViewModel.filterTicket(editable.toString(),"done",Boolean.FALSE);
+            }
+        });
     }
 
     private void startFragment(){

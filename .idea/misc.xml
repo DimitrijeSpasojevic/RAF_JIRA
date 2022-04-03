@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/layout/ticket_list_item.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/ticket_list_item_done.xml" value="0.16311399443929564" />
         <entry key="app/src/main/res/layout/ticket_list_item_in_progress.xml" value="0.16311399443929564" />
+        <entry key="app/src/main/res/layout/ticket_list_item_todo.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.34010416666666665" />
       </map>
     </option>

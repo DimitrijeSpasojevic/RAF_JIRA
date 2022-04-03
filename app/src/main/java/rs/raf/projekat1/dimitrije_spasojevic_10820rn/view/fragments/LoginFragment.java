@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.activities.MainActivity;
 
 public class LoginFragment extends Fragment {
 
@@ -77,6 +78,10 @@ public class LoginFragment extends Fragment {
                 .putString(prefKeyName,userName)
                 .putString(prefKeyEmail,email)
                 .apply();
+        if(userName.startsWith("admin"))
+            MainActivity.isAdminLogged = true;
+        else
+            MainActivity.isAdminLogged = false;
 
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.mainFcv, new MainFragment());

@@ -2,9 +2,11 @@ package rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.adapter;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -19,13 +21,17 @@ import com.bumptech.glide.Glide;
 import java.util.function.Consumer;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.ClickConsumer;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.Ticket;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.activities.MainActivity;
 
 public class TicketAdapterToDo extends ListAdapter<Ticket,TicketAdapterToDo.ViewHolder> {
 
-    private final Consumer<Ticket> onTicketClicked;
+    private final Consumer<ClickConsumer> onTicketClicked;
+    private ClickConsumer.Click click;
 
-    public TicketAdapterToDo(@NonNull DiffUtil.ItemCallback<Ticket> diffCallback, Consumer<Ticket> onTicketClicked) {
+
+    public TicketAdapterToDo(@NonNull DiffUtil.ItemCallback<Ticket> diffCallback, Consumer<ClickConsumer> onTicketClicked) {
         super(diffCallback);
         this.onTicketClicked = onTicketClicked;
     }
@@ -35,9 +41,12 @@ public class TicketAdapterToDo extends ListAdapter<Ticket,TicketAdapterToDo.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ticket_list_item_todo,parent,false);
+        if(!MainActivity.isAdminLogged){
+            view.findViewById(R.id.img_remove).setVisibility(View.GONE);
+        }
         return new TicketAdapterToDo.ViewHolder(view, parent.getContext(), position ->{
             Ticket ticket = getItem(position);
-            onTicketClicked.accept(ticket);
+            onTicketClicked.accept(new ClickConsumer(ticket, this.click));
         });
     }
 
@@ -57,9 +66,24 @@ public class TicketAdapterToDo extends ListAdapter<Ticket,TicketAdapterToDo.View
             this.context = context;
 
             ImageButton imageButton = itemView.findViewById(R.id.image_btn);
+            ImageButton buttonRemove = itemView.findViewById(R.id.img_remove);
+            ImageButton buttonReplaceAtInProgress = itemView.findViewById(R.id.img_next);
 
             imageButton.setOnClickListener(v -> {
                 if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    click= ClickConsumer.Click.DETAILS;
+                    onItemClicked.accept(getAdapterPosition());
+                }
+            });
+            buttonRemove.setOnClickListener(v -> {
+                if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    click = ClickConsumer.Click.REMOVE;
+                    onItemClicked.accept(getAdapterPosition());
+                }
+            });
+            buttonReplaceAtInProgress.setOnClickListener(v -> {
+                if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    click = ClickConsumer.Click.ADD_IN_PROGRESS;
                     onItemClicked.accept(getAdapterPosition());
                 }
             });

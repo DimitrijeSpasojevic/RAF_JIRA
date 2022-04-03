@@ -55,7 +55,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="30dp"
         android:textColor="@color/red"
-        android:text="20"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/jira_stats_title" />
 
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
-        android:text="10"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sum_todo" />
 
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
-        android:text="10"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/e_todo" />
 
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="30dp"
-        android:text="20"
+        android:text="0"
         android:textColor="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/b_todo" />
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
-        android:text="10"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sum_in_progress" />
 
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
-        android:text="10"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/e_in_progress" />
 
@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="30dp"
-        android:text="20"
+        android:text="0"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/b_in_progress" />
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
-        android:text="10"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sum_done" />
 
@@ -137,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
-        android:text="10"
+        android:text="0"
         android:layout_marginBottom="50dp"
 
         app:layout_constraintEnd_toEndOf="parent"
