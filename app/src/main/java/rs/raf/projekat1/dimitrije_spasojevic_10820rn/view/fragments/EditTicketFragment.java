@@ -2,6 +2,7 @@ package rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.fragments;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -33,17 +34,16 @@ public class EditTicketFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initSpinner(view);
         btnSave = view.findViewById(R.id.btn_save);
         ticketTitle = view.findViewById(R.id.text_input_ticket_title);
         ticketDescription = view.findViewById(R.id.text_input_ticket_description);
         ticketEst = view.findViewById(R.id.est);
-        spinnerPriority = view.findViewById(R.id.spinner_ticket_priority);
-        spinnerType = view.findViewById(R.id.spinner_ticket_type);
         ticketEst.setText(ticket.getEstimation());
         ticketTitle.setText(ticket.getTitle());
         ticketDescription.setText(ticket.getDescription());
-        spinnerType.setSelection(Ticket.TicketType.valueOf(ticket.getTicketType().toString()).ordinal());
-        spinnerPriority.setSelection(Ticket.TicketType.valueOf(ticket.getTicketPriority().toString()).ordinal());
+        spinnerType.setSelection(0);
+        spinnerPriority.setSelection(0);
 
         btnSave.setOnClickListener(v -> {
             ticket.setTitle(ticketTitle.getText().toString());
@@ -56,5 +56,28 @@ public class EditTicketFragment extends Fragment {
             transaction.replace(R.id.mainFcv, new DetailsTicketFragment(ticket));
             transaction.commit();
         });
+    }
+
+    private void initSpinner(View view){
+        spinnerPriority = (Spinner) view.findViewById(R.id.spinner_ticket_priority);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(),
+                R.array.priority_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerPriority.setAdapter(adapter);
+        spinnerType = (Spinner) view.findViewById(R.id.spinner_ticket_type);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterT = ArrayAdapter.createFromResource(requireContext(),
+                R.array.type_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterT.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerType.setAdapter(adapterT);
+        int spinnerPosition = adapter.getPosition(ticket.getTicketPriority().toString());
+
+//set the default according to value
+        spinnerPriority.setSelection(spinnerPosition);
     }
 }
