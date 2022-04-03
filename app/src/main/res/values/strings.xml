@@ -13,11 +13,11 @@
     <string name="in_progress">In progress</string>
     <string name="done">Done</string>
     <string name="edit">Edit</string>
+    <string name="edit_ticket">Edit ticket</string>
     <string name="add_new_ticket">Add new ticket</string>
     <string name="ticket_title">Ticket title</string>
     <string name="ticket_description">Ticket description</string>
     <string name="lorem">Lorem ipsum dua. Ut enim ad minim </string>
-    <string name="ticket_type">Ticket type</string>
     <string name="priority">Priority</string>
     <string name="estimation">Estimation</string>
     <string name="logged_time">Logged time</string>
@@ -35,4 +35,5 @@
     <string name="profile">Profile</string>
     <string name="search">Search...</string>
     <string name="save">Save</string>
+    <string name="ticket_type">Ticket type</string>
 </resources>

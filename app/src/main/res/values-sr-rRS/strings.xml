@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">rs.raf.projekat1.dimitrije_spasojevic_10820rn</string>
+    <string name="app_title">Jira sistem za Raf students</string>
+    <string name="password">Lozinka</string>
+    <string name="email">Email</string>
+    <string name="user_name">Korisnicko ime</string>
+    <string name="login">Prijava</string>
+    <string name="logout">Odjava</string>
+    <string name="raf_jira_statistics">Raf Jira statistika</string>
+    <string name="bugs">Bugs</string>
+    <string name="enhancements">Pobolјsanje</string>
+    <string name="to_do">Za uraditi</string>
+    <string name="in_progress">U izradi</string>
+    <string name="done">Zavrseno</string>
+    <string name="edit">Izmeni</string>
+    <string name="add_new_ticket">Dodaj novi tiket</string>
+    <string name="ticket_title">Naziv tiketa</string>
+    <string name="ticket_description">Opis tiketa</string>
+    <string name="lorem">"Lorem ipsum dua. Ut enim ad minim "</string>
+    <string name="ticket_type">Tip  tiketa</string>
+    <string name="priority">Prioritet</string>
+    <string name="estimation">Procena</string>
+    <string name="logged_time">Vreme</string>
+    <string name="ticket_desc">Opis Tiketa</string>
+    <string name="statistics">Statistika</string>
+    <string name="new_s">Nov</string>
+    <string name="enhancement">Poboljsanje</string>
+    <string name="bug">Bug</string>
+    <string name="medium">Srednji</string>
+    <string name="highest">najvisi</string>
+    <string name="high">visok</string>
+    <string name="low">nizak</string>
+    <string name="lowest">najnizi</string>
+    <string name="tickets">Tiketi</string>
+    <string name="profile">Profil</string>
+    <string name="search">Pretrazi...</string>
+    <string name="save">Sacuvaj</string>
+    <string name="edit_ticket">Izmeni tiket</string>
+</resources>

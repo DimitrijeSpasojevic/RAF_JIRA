@@ -104,6 +104,7 @@ public class DetailsTicketFragment extends Fragment {
     private void startFragment(){
         FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+        transaction.addToBackStack(null);
         transaction.replace(R.id.mainFcv, new EditTicketFragment(ticket));
         transaction.commit();
     }
