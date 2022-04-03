@@ -13,7 +13,9 @@
         <entry key="app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/ic_baseline_rocket_launch_24.xml" value="0.2235" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2235" />
+        <entry key="app/src/main/res/drawable/round_corner.xml" value="0.1595" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/layout/fragment_edit_ticket.xml" value="0.4" />
         <entry key="app/src/main/res/layout/fragment_item_details.xml" value="0.2791791363830697" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.2791791363830697" />

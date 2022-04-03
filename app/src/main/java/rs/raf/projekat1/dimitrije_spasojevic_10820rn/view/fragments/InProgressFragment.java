@@ -9,12 +9,14 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.ClickConsumer;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.Ticket;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.adapter.TicketAdapterInProgress;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.differ.TicketDiffItemCallback;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.viewmodels.RecyclerViewModel;
@@ -26,7 +28,6 @@ public class InProgressFragment extends Fragment {
 
     private TicketAdapterInProgress adapter;
     private RecyclerViewModel recyclerViewModel;
-
     public InProgressFragment() {
         super(R.layout.fragment_recycler);
     }
@@ -50,6 +51,7 @@ public class InProgressFragment extends Fragment {
             switch (click){
                 case ADD_IN_DONE: recyclerViewModel.addInDone(clickConsumer.getTicket());break;
                 case ADD_IN_TODO: recyclerViewModel.addInToDo(clickConsumer.getTicket());break;
+                case DETAILS:startFragment(clickConsumer.getTicket());break;
             }
         });
         editText = view.findViewById(R.id.search);
@@ -78,5 +80,14 @@ public class InProgressFragment extends Fragment {
                 recyclerViewModel.filterTicket(editable.toString(),"inProgress",Boolean.FALSE);
             }
         });
+    }
+
+
+    private void startFragment(Ticket ticket){
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.mainFcv, new DetailsTicketFragment(ticket));
+        transaction.commit();
     }
 }

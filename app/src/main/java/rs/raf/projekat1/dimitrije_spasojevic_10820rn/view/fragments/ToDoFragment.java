@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.ClickConsumer;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.Ticket;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.adapter.TicketAdapterToDo;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.differ.TicketDiffItemCallback;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.viewmodels.RecyclerViewModel;
@@ -50,7 +51,7 @@ public class ToDoFragment extends Fragment {
         adapter = new TicketAdapterToDo(new TicketDiffItemCallback(),clickConsumer -> {
             ClickConsumer.Click click = clickConsumer.getClick();
             switch (click){
-                case DETAILS: startFragment();break;
+                case DETAILS: startFragment(clickConsumer.getTicket());break;
                 case REMOVE: recyclerViewModel.deleteFromToDo(clickConsumer.getTicket());break;
                 case ADD_IN_PROGRESS: recyclerViewModel.addInProgress(clickConsumer.getTicket());break;
             }
@@ -85,11 +86,12 @@ public class ToDoFragment extends Fragment {
         });
     }
 
-    private void startFragment(){
+    private void startFragment(Ticket ticket){
+
         FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
         transaction.addToBackStack(null);
-        transaction.replace(R.id.mainFcv, new DetailsTicketFragment());
+        transaction.replace(R.id.mainFcv, new DetailsTicketFragment(ticket));
         transaction.commit();
     }
 }

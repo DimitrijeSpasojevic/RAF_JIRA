@@ -61,6 +61,7 @@ public class TicketAdapterInProgress extends ListAdapter<Ticket, TicketAdapterIn
 
             ImageButton next = itemView.findViewById(R.id.img_next);
             ImageButton prev= itemView.findViewById(R.id.img_prev);
+            ImageButton imgBtn= itemView.findViewById(R.id.image_btn);
 
             next.setOnClickListener(v -> {
                 if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
@@ -71,6 +72,13 @@ public class TicketAdapterInProgress extends ListAdapter<Ticket, TicketAdapterIn
             prev.setOnClickListener(v -> {
                 if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
                     click= ClickConsumer.Click.ADD_IN_TODO;
+                    onItemClicked.accept(getAdapterPosition());
+                }
+            });
+
+            imgBtn.setOnClickListener(v->{
+                if ( getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    click= ClickConsumer.Click.DETAILS;
                     onItemClicked.accept(getAdapterPosition());
                 }
             });

@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.R;
+import rs.raf.projekat1.dimitrije_spasojevic_10820rn.model.Ticket;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.adapter.TicketAdapterDone;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.view.recycler.differ.TicketDiffItemCallback;
 import rs.raf.projekat1.dimitrije_spasojevic_10820rn.viewmodels.RecyclerViewModel;
-import rs.raf.projekat1.dimitrije_spasojevic_10820rn.viewmodels.ViewModelSelectedItem;
 
 public class DoneFragment extends Fragment {
 
@@ -27,7 +27,6 @@ public class DoneFragment extends Fragment {
 
     private TicketAdapterDone adapter;
     private RecyclerViewModel recyclerViewModel;
-    private ViewModelSelectedItem viewModelSelectedItem;
 
     public DoneFragment() {
         super(R.layout.fragment_recycler);
@@ -37,7 +36,6 @@ public class DoneFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         recyclerViewModel = new ViewModelProvider(requireActivity()).get(RecyclerViewModel.class);
-        viewModelSelectedItem = new ViewModelProvider(requireActivity()).get(ViewModelSelectedItem.class);
     }
 
     @Override
@@ -49,8 +47,7 @@ public class DoneFragment extends Fragment {
 
     private void init(View view){
         adapter = new TicketAdapterDone(new TicketDiffItemCallback(), ticket -> {
-            viewModelSelectedItem.setTicket(ticket);
-            startFragment();
+            startFragment(ticket);
         });
         editText = view.findViewById(R.id.search);
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -81,9 +78,11 @@ public class DoneFragment extends Fragment {
         });
     }
 
-    private void startFragment(){
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainFcv, new DetailsTicketFragment());
+    private void startFragment(Ticket ticket){
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.mainFcv, new DetailsTicketFragment(ticket));
         transaction.commit();
     }
 }
