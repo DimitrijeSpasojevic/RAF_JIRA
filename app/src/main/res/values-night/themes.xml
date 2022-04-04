@@ -14,4 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="color">#FFB863</item>
     </style>
+    <style name="myStyle" parent="TextAppearance.AppCompat">
+        <item name="android:background">#FFB300</item>
+    </style>
 </resources>
